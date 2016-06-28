@@ -2,6 +2,7 @@ group 'com.tado.coap'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'groovy'
+apply plugin: 'java'
 
 repositories {
    mavenCentral()

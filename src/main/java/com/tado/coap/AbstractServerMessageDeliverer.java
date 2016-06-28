@@ -1,25 +1,29 @@
-package com.tado.coap
+package com.tado.coap;
 
-import org.eclipse.californium.core.coap.CoAP
-import org.eclipse.californium.core.coap.Request
-import org.eclipse.californium.core.coap.Response
-import org.eclipse.californium.core.network.Exchange
-import org.eclipse.californium.core.observe.ObserveManager
-import org.eclipse.californium.core.observe.ObserveRelation
-import org.eclipse.californium.core.observe.ObservingEndpoint
-import org.eclipse.californium.core.server.MessageDeliverer
-import org.eclipse.californium.core.server.resources.Resource
+import groovy.transform.CompileStatic;
+import org.eclipse.californium.core.coap.CoAP;
+import org.eclipse.californium.core.coap.Request;
+import org.eclipse.californium.core.coap.Response;
+import org.eclipse.californium.core.network.Exchange;
+import org.eclipse.californium.core.observe.ObserveManager;
+import org.eclipse.californium.core.observe.ObserveRelation;
+import org.eclipse.californium.core.observe.ObservingEndpoint;
+import org.eclipse.californium.core.server.MessageDeliverer;
+import org.eclipse.californium.core.server.resources.Resource;
 
-import java.util.concurrent.Executor
-import java.util.logging.Logger
+import java.net.InetSocketAddress;
+import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.logging.Logger;
 
 /**
  * Copy pasted code from
  * @see org.eclipse.californium.core.server.ServerMessageDeliverer
  */
+@CompileStatic
 abstract class AbstractServerMessageDeliverer implements MessageDeliverer {
 
-   abstract protected Resource findResource(List<String> pathParts)
+   abstract protected Resource findResource(List<String> pathParts);
 
    private final static Logger LOGGER = Logger.getLogger(PatternMatchingMessageDeliverer.class.getCanonicalName());
    /* The manager of the observe mechanism for this server */
